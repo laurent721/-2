@@ -51,7 +51,7 @@ function App() {
                </p>
             </div>
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/noroojumping/" 
               target="_blank" 
               rel="noreferrer"
               className="inline-block px-6 py-3 border border-gray-600 rounded-full text-sm uppercase hover:bg-white hover:text-black hover:border-white transition-all duration-300 cursor-hover"
