@@ -24,7 +24,7 @@ export const I18N: I18nDictionary = {
   "back": { ko: "뒤로", en: "BACK", fr: "RETOUR" },
   // Tab Labels
   "tab-overview": { ko: "개요", en: "Overview", fr: "Aperçu" },
-  "tab-performance": { ko: "상연", en: "Performance", fr: "Performance" },
+  "tab-performance": { ko: "상연", en: "history", fr: "histoire" },
   "tab-photos": { ko: "사진", en: "Photos", fr: "Photos" },
   "tab-techrider": { ko: "테크니컬 라이더", en: "Tech Rider", fr: "Fiche Technique" },
 };
