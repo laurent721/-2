@@ -6,9 +6,6 @@ import ArchiveList from './components/ArchiveList';
 import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
 
-// Use a remote image to ensure build success if local file is missing
-const mainBg = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80";
-
 function App() {
   const [lang, setLang] = useState<Language>('ko');
   const [currentSection, setCurrentSection] = useState<SectionType>('main');
@@ -54,7 +51,7 @@ function App() {
                </p>
             </div>
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/noroojumping/" 
               target="_blank" 
               rel="noreferrer"
               className="inline-block px-6 py-3 border border-gray-600 rounded-full text-sm uppercase hover:bg-white hover:text-black hover:border-white transition-all duration-300 cursor-hover"
@@ -243,11 +240,9 @@ function App() {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-10 flex justify-center items-center overflow-hidden"
           >
-             {/* Background Image: Imported to ensure it's bundled */}
-             <div 
-               className="absolute inset-0 bg-cover bg-center z-0 scale-100 hover:scale-105 transition-transform duration-[10000ms] ease-linear"
-               style={{ backgroundImage: `url('${mainBg}')` }}
-             ></div>
+             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-center px-4 mix-blend-difference">
+               {I18N['hero-text'][lang]}
+             </h1>
           </motion.section>
         )}
       </AnimatePresence>
