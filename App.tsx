@@ -240,19 +240,12 @@ function App() {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-10 flex justify-center items-center overflow-hidden"
           >
-             <div className="absolute inset-0 bg-black/30 z-[1] pointer-events-none"></div>
+             {/* Background Image: Please save your image as 'main-bg.png' in the root folder */}
              <div 
-               className="absolute inset-0 bg-cover bg-center z-0 grayscale opacity-60 scale-100 hover:scale-105 transition-transform duration-[10000ms] ease-linear"
-               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507608869274-2c330136e85e?q=80&w=2500&auto=format&fit=crop')" }}
+               className="absolute inset-0 bg-cover bg-center z-0 scale-100 hover:scale-105 transition-transform duration-[10000ms] ease-linear"
+               style={{ backgroundImage: "url('./main-bg.png')" }}
              ></div>
-             <motion.h1 
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
-                className="relative z-[2] font-serif italic text-4xl md:text-7xl lg:text-8xl text-center pointer-events-none px-4"
-             >
-               {I18N['hero-text'][lang]}
-             </motion.h1>
+             {/* Text Removed */}
           </motion.section>
         )}
       </AnimatePresence>
