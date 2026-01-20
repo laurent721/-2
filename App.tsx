@@ -5,6 +5,8 @@ import Navigation from './components/Navigation';
 import ArchiveList from './components/ArchiveList';
 import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
+// Import the image so the bundler handles it
+import mainBg from './main-bg.png';
 
 function App() {
   const [lang, setLang] = useState<Language>('ko');
@@ -240,12 +242,11 @@ function App() {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-10 flex justify-center items-center overflow-hidden"
           >
-             {/* Background Image: Please save your image as 'main-bg.png' in the root folder */}
+             {/* Background Image: Imported to ensure it's bundled */}
              <div 
                className="absolute inset-0 bg-cover bg-center z-0 scale-100 hover:scale-105 transition-transform duration-[10000ms] ease-linear"
-               style={{ backgroundImage: "url('./main-bg.png')" }}
+               style={{ backgroundImage: `url('${mainBg}')` }}
              ></div>
-             {/* Text Removed */}
           </motion.section>
         )}
       </AnimatePresence>
