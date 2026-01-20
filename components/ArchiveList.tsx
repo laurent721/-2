@@ -10,7 +10,7 @@ interface ArchiveListProps {
 
 type TabType = 'overview' | 'performance' | 'photos' | 'techRider';
 
-const ArchiveList: React.FC<ArchiveListProps> = ({ items, lang }) => {
+const ArchiveList = ({ items, lang }: ArchiveListProps) => {
   // Track which item is expanded
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -40,7 +40,7 @@ interface ArchiveItemRowProps {
   lang: Language;
 }
 
-const ArchiveItemRow: React.FC<ArchiveItemRowProps> = ({ item, isExpanded, onToggle, lang }) => {
+const ArchiveItemRow = ({ item, isExpanded, onToggle, lang }: ArchiveItemRowProps) => {
   const [activeTab, setActiveTab] = useState<TabType>('overview');
 
   const tabs: { key: TabType; labelKey: string }[] = [

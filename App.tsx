@@ -20,7 +20,7 @@ function App() {
   const [activeTeamMember, setActiveTeamMember] = useState<TeamMember | null>(null);
 
   // Group team members into rows of 3
-  const teamRows = [];
+  const teamRows: TeamMember[][] = [];
   for (let i = 0; i < TEAM_MEMBERS.length; i += 3) {
     teamRows.push(TEAM_MEMBERS.slice(i, i + 3));
   }

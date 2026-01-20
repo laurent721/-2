@@ -9,7 +9,7 @@ interface NavigationProps {
   lang: Language;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen, setSection, lang }) => {
+const Navigation = ({ isOpen, setIsOpen, setSection, lang }: NavigationProps) => {
   
   const menuItems: { key: string; target: SectionType }[] = [
     { key: "menu-about", target: "about" },
