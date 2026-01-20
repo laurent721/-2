@@ -6,9 +6,8 @@ import ArchiveList from './components/ArchiveList';
 import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
 
-// [중요] main-bg.jpg 파일을 이 파일(App.tsx)과 같은 폴더(루트)에 놓아주세요.
-// 파일을 import 방식으로 불러오면 경로 문제와 캐싱 문제를 해결할 수 있습니다.
-import mainBg from './main-bg.jpg';
+// Use a remote image to ensure build success if local file is missing
+const mainBg = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80";
 
 function App() {
   const [lang, setLang] = useState<Language>('ko');
