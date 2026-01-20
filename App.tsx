@@ -5,8 +5,9 @@ import Navigation from './components/Navigation';
 import ArchiveList from './components/ArchiveList';
 import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
-// Import the image so the bundler handles it
-import mainBg from './main-bg.png';
+
+// Use a remote image to ensure build success if local file is missing
+const mainBg = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80";
 
 function App() {
   const [lang, setLang] = useState<Language>('ko');

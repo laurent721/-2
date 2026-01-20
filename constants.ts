@@ -9,7 +9,7 @@ export const I18N: I18nDictionary = {
   "menu-about": { ko: "소개", en: "ABOUT", fr: "À PROPOS" },
   "menu-team": { ko: "팀원", en: "TEAM", fr: "ÉQUIPE" },
   "menu-activity": { ko: "활동", en: "ACTIVITY", fr: "ACTIVITÉ" },
-  "menu-archive": { ko: "기록", en: "ARCHIVE", fr: "ARCHIVES" },
+  "menu-archive": { ko: "아카이브", en: "ARCHIVE", fr: "ARCHIVES" },
   "menu-press": { ko: "보도", en: "PRESS", fr: "PRESSE" },
   "about-desc": {
     ko: "연주대를 지붕 삼아 학문에 크지도 작지도 않은 뜻을 두고 폐관수련을 이어오던 대학원생 셋이 재미로움을 좇아 일단 무언가를 해보자 하고 의기투합하여 자하동으로 흘러드는 냇가에 모여 쿠키를 나누며 의를 맺었습니다. 학문과 예술의 경계를 노루가 뛰놀듯 넘나들고자 하였으니, 관악에 전해 내려오는 전설 같은 고사들 중에서 출전의 근거로 삼아 이들의 모임을 일컬어 '노루점핑'이라 이름지었습니다.",
