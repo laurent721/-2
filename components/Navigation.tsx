@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Language, SectionType } from '../types';
 import { I18N } from '../constants';
