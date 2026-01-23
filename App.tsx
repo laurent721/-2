@@ -40,11 +40,12 @@ function App() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-7xl font-black mb-16 uppercase">{I18N['menu-about'][lang]}</h2>
             <div className="mb-20">
-               {/* Placeholder for Logo Image */}
-               <div className="w-full max-w-lg mb-12 opacity-80 mix-blend-screen bg-white h-24 mask-image" style={{maskImage: 'url(https://via.placeholder.com/300x100?text=LOGO)', WebkitMaskImage: 'url(https://via.placeholder.com/300x100?text=LOGO)'}}>
-                  {/* Using text fallback since image is local in prompt */}
-                  <h3 className="text-4xl font-serif italic text-black bg-white p-2 inline-block">Collective Noroo Jumping</h3>
-               </div>
+               {/* Logo Image Area */}
+               <img 
+                 src="https://via.placeholder.com/600x200?text=LOGO+PLACEHOLDER" 
+                 alt="Collective Noroo Jumping Logo" 
+                 className="w-1/2 mb-12 object-contain block" 
+               />
                
                <p className="text-lg md:text-xl leading-relaxed text-gray-300 font-light whitespace-pre-line">
                  {I18N['about-desc'][lang]}

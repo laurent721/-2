@@ -3,56 +3,30 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArchiveItem, Language } from '../types';
 import { I18N } from '../constants';
 
-interface ArchiveListProps {
-  items: ArchiveItem[];
-  lang: Language;
-}
-
-type TabType = 'overview' | 'performance' | 'photos' | 'techRider';
-
-const ArchiveList = ({ items, lang }: ArchiveListProps) => {
-  // Track which item is expanded
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-
-  const toggleItem = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
-  return (
-    <div className="border-t border-border mt-10">
-      {items.map((item) => (
-        <ArchiveItemRow 
-          key={item.id} 
-          item={item} 
-          isExpanded={expandedId === item.id} 
-          onToggle={() => toggleItem(item.id)}
-          lang={lang}
-        />
-      ))}
-    </div>
-  );
-};
+type TabType = 'overview' | 'performance' | 'photos' | 'crew' | 'techRider';
 
 interface ArchiveItemRowProps {
   item: ArchiveItem;
   isExpanded: boolean;
   onToggle: () => void;
+  onImageClick: (src: string) => void;
   lang: Language;
 }
 
-const ArchiveItemRow = ({ item, isExpanded, onToggle, lang }: ArchiveItemRowProps) => {
+const ArchiveItemRow = ({ item, isExpanded, onToggle, onImageClick, lang }: ArchiveItemRowProps) => {
   const [activeTab, setActiveTab] = useState<TabType>('overview');
 
   const tabs: { key: TabType; labelKey: string }[] = [
     { key: 'overview', labelKey: 'tab-overview' },
     { key: 'performance', labelKey: 'tab-performance' },
     { key: 'photos', labelKey: 'tab-photos' },
+    { key: 'crew', labelKey: 'tab-crew' },
     { key: 'techRider', labelKey: 'tab-techrider' },
   ];
 
   return (
     <div className="border-b border-border">
-      {/* Header Row - Refactored Layout: Title Left, Place & Year Right */}
+      {/* Header Row */}
       <div 
         className="py-6 cursor-pointer cursor-hover group flex flex-col md:flex-row justify-between items-start md:items-center transition-colors duration-300 hover:text-accent"
         onClick={onToggle}
@@ -64,7 +38,6 @@ const ArchiveItemRow = ({ item, isExpanded, onToggle, lang }: ArchiveItemRowProp
         <span className="text-xl md:text-2xl font-bold mb-2 md:mb-0">{item.title}</span>
         
         {/* Right: Place and Year group */}
-        {/* Place text is moved to the right side, not too close (mr-8) to the year, and right-aligned. */}
         <div className="flex items-center text-sm md:text-lg text-gray-400 group-hover:text-accent/80 transition-colors self-end md:self-auto">
           <span className="mr-8 text-right">{item.place}</span>
           <span className="font-mono font-bold">{item.year}</span>
@@ -116,16 +89,23 @@ const ArchiveItemRow = ({ item, isExpanded, onToggle, lang }: ArchiveItemRowProp
                 
                 {activeTab === 'performance' && <p>{item.content.performance}</p>}
                 
+                {activeTab === 'crew' && <p className="whitespace-pre-line">{item.content.crew}</p>}
+
                 {activeTab === 'photos' && (
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {item.content.photos.map((photo, idx) => (
-                      <img 
+                      <div 
                         key={idx} 
-                        src={photo} 
-                        alt={`${item.title} photo ${idx + 1}`} 
-                        className="w-full h-40 object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-sm" 
-                        loading="lazy"
-                      />
+                        className="overflow-hidden rounded-sm cursor-zoom-in cursor-hover"
+                        onClick={() => onImageClick(photo)}
+                      >
+                        <img 
+                          src={photo} 
+                          alt={`${item.title} photo ${idx + 1}`} 
+                          className="w-full h-40 object-cover grayscale hover:grayscale-0 hover:scale-110 transition-all duration-500" 
+                          loading="lazy"
+                        />
+                      </div>
                     ))}
                   </div>
                 )}
@@ -141,6 +121,63 @@ const ArchiveItemRow = ({ item, isExpanded, onToggle, lang }: ArchiveItemRowProp
         )}
       </AnimatePresence>
     </div>
+  );
+};
+
+interface ArchiveListProps {
+  items: ArchiveItem[];
+  lang: Language;
+}
+
+const ArchiveList = ({ items, lang }: ArchiveListProps) => {
+  // Track which item is expanded
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  // Lightbox state
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+
+  const toggleItem = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  return (
+    <>
+      <div className="border-t border-border mt-10">
+        {items.map((item) => (
+          <ArchiveItemRow 
+            key={item.id} 
+            item={item} 
+            isExpanded={expandedId === item.id} 
+            onToggle={() => toggleItem(item.id)}
+            onImageClick={(imgSrc) => setLightboxImg(imgSrc)}
+            lang={lang}
+          />
+        ))}
+      </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxImg && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] bg-black/95 flex justify-center items-center p-4 cursor-pointer"
+            onClick={() => setLightboxImg(null)}
+          >
+             <div className="relative max-w-full max-h-full">
+                <img 
+                  src={lightboxImg} 
+                  alt="Fullsize preview" 
+                  className="max-w-full max-h-[90vh] object-contain select-none"
+                />
+                <button className="absolute top-4 right-4 text-white text-sm uppercase bg-black/50 px-3 py-1 rounded-full hover:bg-white hover:text-black transition-colors cursor-hover">
+                   Close
+                </button>
+             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

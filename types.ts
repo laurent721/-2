@@ -25,6 +25,7 @@ export interface ArchiveItem {
   content: {
     overview: string;
     performance: string;
+    crew: string; // Added field
     photos: string[]; // URLs
     techRider: string; // Description or download link mock
   };

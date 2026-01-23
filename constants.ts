@@ -24,8 +24,9 @@ export const I18N: I18nDictionary = {
   "back": { ko: "뒤로", en: "BACK", fr: "RETOUR" },
   // Tab Labels
   "tab-overview": { ko: "개요", en: "Overview", fr: "Aperçu" },
-  "tab-performance": { ko: "상연", en: "history", fr: "histoire" },
+  "tab-performance": { ko: "상연", en: "Performance", fr: "Performance" },
   "tab-photos": { ko: "사진", en: "Photos", fr: "Photos" },
+  "tab-crew": { ko: "제작진", en: "Crew", fr: "Équipe" },
   "tab-techrider": { ko: "테크니컬 라이더", en: "Tech Rider", fr: "Fiche Technique" },
 };
 
@@ -88,6 +89,7 @@ export const ARCHIVES: ArchiveItem[] = [
     content: {
       overview: "프로젝트 알파는 우리의 첫 번째 시도였습니다. 디지털과 아날로그의 융합을 주제로 실험적인 무대를 구성했습니다. 관객 참여형 퍼포먼스로 큰 호응을 얻었습니다.",
       performance: "총 3막으로 구성된 공연은 사물의 탄생, 반란, 그리고 화해를 다룹니다. 배우들은 오브제와 하나가 되어 움직입니다.",
+      crew: "연출: 고은설\n기획: 송애빈, 김성민\n드라마투르기: 장민영\n공간: 정수미\n프로듀서: 안건우\n\n조명디자인: 이빛나\n음향감독: 박소리\n무대감독: 최현장",
       photos: ["https://picsum.photos/400/300", "https://picsum.photos/401/300", "https://picsum.photos/402/300"],
       techRider: "조명: ETC Ion XE, 음향: d&b audiotechnik, 무대 크기: 12m x 9m. 전력: 3상 4선식 50kW."
     }
@@ -100,6 +102,7 @@ export const ARCHIVES: ArchiveItem[] = [
     content: {
       overview: "서울 디자인 위크에 참여하여 '도시의 소음'을 주제로 한 설치 미술을 선보였습니다. 과거 방송국의 아카이브 자료를 재해석했습니다.",
       performance: "관객은 헤드폰을 착용하고 전시장을 배회하며 각기 다른 주파수의 소리를 청취합니다. 특정 지점에서 퍼포머가 등장합니다.",
+      crew: "총괄: 안건우\n공간연출: 정수미\n사운드: 김소리\n아카이빙: 박기록\n\n출연: 노루 점핑 일동",
       photos: ["https://picsum.photos/400/301", "https://picsum.photos/401/301"],
       techRider: "영상: 10,000 ANSI Projector x 4, 매핑 서버: Resolume Arena, 음향: 무선 헤드폰 시스템 50대."
     }
