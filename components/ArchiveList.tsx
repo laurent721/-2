@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArchiveItem, Language } from '../types';
 import { I18N } from '../constants';
@@ -13,7 +13,7 @@ interface ArchiveItemRowProps {
   lang: Language;
 }
 
-const ArchiveItemRow = ({ item, isExpanded, onToggle, onImageClick, lang }: ArchiveItemRowProps) => {
+const ArchiveItemRow: React.FC<ArchiveItemRowProps> = ({ item, isExpanded, onToggle, onImageClick, lang }) => {
   const [activeTab, setActiveTab] = useState<TabType>('overview');
 
   const tabs: { key: TabType; labelKey: string }[] = [

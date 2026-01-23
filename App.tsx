@@ -289,7 +289,7 @@ function App() {
              <div className="max-w-4xl mx-auto p-10">
                 <h2 className="text-4xl md:text-6xl font-serif mb-6">{activeActivity.title}</h2>
                 <div className="text-accent mb-8 font-mono">{activeActivity.dateStr}</div>
-                <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-xl text-gray-300 leading-relaxed max-w-2xl whitespace-pre-line">
                    {ACTIVITY_DESC[activeActivity.descKey]?.[lang]}
                 </p>
              </div>

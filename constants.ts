@@ -69,13 +69,13 @@ export const ACTIVITIES: Activity[] = [
 
 export const ACTIVITY_DESC: I18nDictionary = {
   "event-1-desc": { 
-    ko: "'사물대소동'은 일상의 사물들이 반란을 일으키는 과정을 그립니다. 관객은 사물의 관점에서 세상을 다시 바라보게 됩니다.",
-    en: "'Object Chaos' depicts the rebellion of everyday objects. The audience sees the world from the object's perspective.",
+    ko: "'사물대소동'은 일상의 사물들이 반란을 일으키는 과정을 그립니다.\n\n관객은 사물의 관점에서 세상을 다시 바라보게 됩니다.",
+    en: "'Object Chaos' depicts the rebellion of everyday objects.\n\nThe audience sees the world from the object's perspective.",
     fr: "'Chaos des Objets' dépeint la rébellion des objets du quotidien."
   },
   "event-2-desc": {
-    ko: "'TBC 가족 여러분'은 미디어의 역사와 개인의 기억을 연결합니다. 잊혀진 방송 신호를 추적하는 여정입니다.",
-    en: "'Hello TBC Family' connects media history with personal memories. A journey tracing forgotten broadcast signals.",
+    ko: "'TBC 가족 여러분'은 미디어의 역사와 개인의 기억을 연결합니다.\n\n잊혀진 방송 신호를 추적하는 여정입니다.",
+    en: "'Hello TBC Family' connects media history with personal memories.\n\nA journey tracing forgotten broadcast signals.",
     fr: "'Bonjour Famille TBC' relie l'histoire des médias aux souvenirs personnels."
   }
 };
