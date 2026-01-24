@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
 import ArchiveList from './components/ArchiveList';
-import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS } from './constants';
+import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS, HERO_IMAGE_URL } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
 
 function App() {
@@ -241,9 +241,11 @@ function App() {
             transition={{ duration: 0.5 }}
             className="fixed inset-0 z-10 flex justify-center items-center overflow-hidden"
           >
-             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-center px-4 mix-blend-difference">
-               {I18N['hero-text'][lang]}
-             </h1>
+             <img 
+               src={HERO_IMAGE_URL} 
+               alt="Main Visual" 
+               className="max-w-[80vw] max-h-[80vh] object-contain mix-blend-difference pointer-events-none select-none" 
+             />
           </motion.section>
         )}
       </AnimatePresence>

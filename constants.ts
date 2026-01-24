@@ -1,5 +1,9 @@
 import { TeamMember, Activity, ArchiveItem, PressItem, I18nDictionary } from './types';
 
+// 메인 페이지 이미지 URL
+// 구글 드라이브 이미지 사용 시: https://drive.google.com/uc?export=view&id={FILE_ID} 형식을 사용하세요.
+export const HERO_IMAGE_URL = "https://via.placeholder.com/1200x600/000000/FFFFFF?text=Main+Image";
+
 export const I18N: I18nDictionary = {
   "hero-text": {
     ko: "\"관악 마운틴 노루 점핑\"",
