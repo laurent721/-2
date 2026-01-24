@@ -244,7 +244,7 @@ function App() {
              <img 
                src={HERO_IMAGE_URL} 
                alt="Main Visual" 
-               className="max-w-[80vw] max-h-[80vh] object-contain mix-blend-difference pointer-events-none select-none" 
+               className="max-w-[80vw] max-h-[80vh] object-contain pointer-events-none select-none" 
              />
           </motion.section>
         )}
