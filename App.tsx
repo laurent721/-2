@@ -257,6 +257,10 @@ function App() {
              <img 
                src={getOptimizedImageUrl(HERO_IMAGE_URL)} 
                alt="Main Visual" 
+               onError={(e) => {
+                 // Fallback if local file not found
+                 e.currentTarget.src = "https://via.placeholder.com/1200x600/000000/FFFFFF?text=File+Not+Found:+Check+public/main-visual.jpg";
+               }}
                className="max-w-[80vw] max-h-[80vh] object-contain pointer-events-none select-none" 
              />
           </motion.section>

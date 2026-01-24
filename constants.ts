@@ -1,8 +1,9 @@
 import { TeamMember, Activity, ArchiveItem, PressItem, I18nDictionary } from './types';
 
-// 메인 페이지 이미지 URL
-// 구글 드라이브 이미지 사용 시: https://drive.google.com/uc?export=view&id={FILE_ID} 형식을 사용하세요.
-export const HERO_IMAGE_URL = "https://drive.google.com/uc?export=view&id=1ta7gdLCu29d_w5l4ao3jZ4iH62UeHOf8";
+// 메인 페이지 이미지 URL 설정
+// 방법 1 (권장): 프로젝트 최상단에 'public' 폴더를 만들고 이미지를 넣은 뒤 파일명을 적으세요. (예: "main-visual.jpg")
+// 방법 2 (외부 링크): GitHub Issue에 이미지를 업로드하고 생성된 링크를 붙여넣으세요.
+export const HERO_IMAGE_URL = "main-visual.jpg";
 
 export const I18N: I18nDictionary = {
   "hero-text": {
