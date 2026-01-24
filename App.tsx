@@ -6,6 +6,19 @@ import ArchiveList from './components/ArchiveList';
 import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS, HERO_IMAGE_URL } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
 
+// Helper function to convert Google Drive viewer links to direct image links
+const getOptimizedImageUrl = (url: string) => {
+  // Check if it is a Google Drive Link
+  if (url.includes('drive.google.com') && url.includes('/file/d/')) {
+    // Extract ID
+    const idMatch = url.match(/\/d\/([^/]+)/);
+    if (idMatch && idMatch[1]) {
+      return `https://drive.google.com/uc?export=view&id=${idMatch[1]}`;
+    }
+  }
+  return url;
+};
+
 function App() {
   const [lang, setLang] = useState<Language>('ko');
   const [currentSection, setCurrentSection] = useState<SectionType>('main');
@@ -242,7 +255,7 @@ function App() {
             className="fixed inset-0 z-10 flex justify-center items-center overflow-hidden"
           >
              <img 
-               src={HERO_IMAGE_URL} 
+               src={getOptimizedImageUrl(HERO_IMAGE_URL)} 
                alt="Main Visual" 
                className="max-w-[80vw] max-h-[80vh] object-contain pointer-events-none select-none" 
              />
