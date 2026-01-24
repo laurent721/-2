@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
 import ArchiveList from './components/ArchiveList';
-import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS, HERO_IMAGE_URL } from './constants';
+import { I18N, TEAM_MEMBERS, TEAM_DESC, ACTIVITIES, ACTIVITY_DESC, ARCHIVES, PRESS, HERO_IMAGE_URL, ABOUT_IMAGE_URL } from './constants';
 import { Language, SectionType, TeamMember, Activity } from './types';
 
 // Helper function to convert Google Drive viewer links to direct image links
@@ -55,8 +55,11 @@ function App() {
             <div className="mb-20">
                {/* Logo Image Area */}
                <img 
-                 src="https://via.placeholder.com/600x200?text=LOGO+PLACEHOLDER" 
+                 src={getOptimizedImageUrl(ABOUT_IMAGE_URL)}
                  alt="Collective Noroo Jumping Logo" 
+                 onError={(e) => {
+                   e.currentTarget.src = "https://via.placeholder.com/600x200/000000/FFFFFF?text=Check+public/about-visual.jpg";
+                 }}
                  className="w-1/2 mb-12 object-contain block" 
                />
                

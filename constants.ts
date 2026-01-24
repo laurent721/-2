@@ -5,6 +5,9 @@ import { TeamMember, Activity, ArchiveItem, PressItem, I18nDictionary } from './
 // 방법 2 (외부 링크): GitHub Issue에 이미지를 업로드하고 생성된 링크를 붙여넣으세요.
 export const HERO_IMAGE_URL = "main-visual.jpg";
 
+// 소개(About) 페이지 상단 이미지 URL 설정
+export const ABOUT_IMAGE_URL = "about-visual.jpg";
+
 export const I18N: I18nDictionary = {
   "hero-text": {
     ko: "\"관악 마운틴 노루 점핑\"",
